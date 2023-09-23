@@ -18,10 +18,21 @@ const todoSlice = createSlice({
       state.todoList.push(newTodo);
     },
     deleteTodo: (state, action) => {
-        state.todoList = state.todoList.filter((todo) => todo.id !== action.payload)
+      state.todoList = state.todoList.filter(
+        (todo) => todo.id !== action.payload
+      );
+    },
+    markAsCompleted: (state, action) => {
+      const todoIndex = state.todoList.findIndex(
+        (todo) => todo.id === action.payload.id
+      );
+      if (todoIndex >= 0) {
+        state.todoList[todoIndex].completed =
+          !state.todoList[todoIndex].completed;
+      }
     },
   },
 });
 
-export const { addTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, markAsCompleted } = todoSlice.actions;
 export default todoSlice.reducer;
