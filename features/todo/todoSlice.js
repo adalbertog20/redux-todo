@@ -23,13 +23,10 @@ const todoSlice = createSlice({
       );
     },
     markAsCompleted: (state, action) => {
-      const todoIndex = state.todoList.findIndex(
+      const index = state.todoList.findIndex(
         (todo) => todo.id === action.payload.id
       );
-      if (todoIndex >= 0) {
-        state.todoList[todoIndex].completed =
-          !state.todoList[todoIndex].completed;
-      }
+      state.todoList[index].completed = action.payload.completed;
     },
   },
 });
