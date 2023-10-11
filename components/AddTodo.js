@@ -19,10 +19,15 @@ export default function AddTodo() {
   };
 
   return (
-    <View className="">
+    <View className=" flex justify-center items-center">
       <View className="flex flex-row mb-2">
         <TextInput
-          className="border-slate-300 border-2 rounded-sm w-36 h-10 p-2"
+          style={{
+            borderColor: "gray",
+            color: "white",
+          }}
+          placeholderTextColor={"gray"}
+          className="w-96 border p-2 rounded-lg"
           placeholder="type your task to do"
           value={value}
           onChangeText={(value) => setValue(value)}

@@ -14,16 +14,14 @@ export default function TodoList() {
         <View className="mb-2 flex flex-row bg-darker_black p-2 rounded-lg">
           {todo.completed && (
             <View className="" key={index}>
-              <Text className="text-xl text-foreground line-through">{`${
-                index + 1
-              }. ${todo.content}`}</Text>
+              <Text className="text-xl text-foreground line-through">{`${index + 1
+                }. ${todo.content}`}</Text>
             </View>
           )}
           {!todo.completed && (
             <View className="" key={index}>
-              <Text className="text-xl text-foreground">{`${index + 1}. ${
-                todo.content
-              }`}</Text>
+              <Text className="text-xl text-foreground">{`${index + 1}. ${todo.content
+                }`}</Text>
             </View>
           )}
           <View className="ml-2 bg-red rounded-md flex items-center justify-center">
